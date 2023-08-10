@@ -150,22 +150,66 @@ if __name__ == "__main__":
         tracemalloc.stop()
 
 # Result type <class 'tuple'>
-# Memory Use: Current 123688139, Peak 123718519
+# Function read_rides_as_tuples('Data/ctabus.csv',) {'result_type': <class 'tuple'>} Took 2.1695 seconds
+# Memory Use: Current 123687582, Peak 123717871
 # Result type <class 'dict'>
-# Memory Use: Current 188375438, Peak 188405807
+# Function read_rides_as_tuples('Data/ctabus.csv',) {'result_type': <class 'dict'>} Took 2.2279 seconds
+# Memory Use: Current 188375382, Peak 188405775
 # Result type <class '__main__.RowTuple'>
-# Memory Use: Current 128309110, Peak 128339407
+# Function read_rides_as_tuples('Data/ctabus.csv',) {'result_type': <class '__main__.RowTuple'>} Took 2.2949 seconds
+# Memory Use: Current 128309102, Peak 128339375
 # Result type <class '__main__.RowSimple'>
-# Memory Use: Current 142173254, Peak 142203543
+# Function read_rides_as_tuples('Data/ctabus.csv',) {'result_type': <class '__main__.RowSimple'>} Took 2.7460 seconds
+# Memory Use: Current 142173422, Peak 142203687
 # Result type <class '__main__.RowWithSlots'>
-# Memory Use: Current 119068038, Peak 119098319
+# Function read_rides_as_tuples('Data/ctabus.csv',) {'result_type': <class '__main__.RowWithSlots'>} Took 2.5472 seconds
+# Memory Use: Current 119068206, Peak 119098463
 # Result type <class '__main__.RowDataclassWithotSlots'>
-# Memory Use: Current 142173318, Peak 142203591
+# Function read_rides_as_tuples('Data/ctabus.csv',) {'result_type': <class '__main__.RowDataclassWithotSlots'>} Took 2.6040 seconds
+# Memory Use: Current 142173486, Peak 142203735
 # Result type <class '__main__.RowDataclassWithSlots'>
-# Memory Use: Current 119067982, Peak 119098247
-# Result type <class '__main__.RowPydantic'> -v2
-# Memory Use: Current 359334494, Peak 359364807
-# Result type <class '__main__.RowPydantic'> -v1
-# Memory Use: Current 345473582, Peak 345503895
+# Function read_rides_as_tuples('Data/ctabus.csv',) {'result_type': <class '__main__.RowDataclassWithSlots'>} Took 2.5886 seconds
+# Memory Use: Current 119068150, Peak 119098391
+# Result type <class '__main__.RowPydantic'>
+# Function read_rides_as_tuples('Data/ctabus.csv',) {'result_type': <class '__main__.RowPydantic'>} Took 4.3285 seconds
+# Memory Use: Current 359334406, Peak 359364695
 # Result type <class '__main__.RowStruct'>
-# Memory Use: Current 119067750, Peak 119098055
+# Function read_rides_as_tuples('Data/ctabus.csv',) {'result_type': <class '__main__.RowStruct'>} Took 1.8755 seconds
+# Memory Use: Current 119067814, Peak 119098143
+# ❯ poetry run ipython src/2_1/readrides.py
+# Result type <class 'tuple'>
+# Total 577563
+# Function read_rides_as_tuples('Data/ctabus.csv',) {'result_type': <class 'tuple'>} Took 2.0230 seconds
+# Memory Use: Current 123688374, Peak 123718663
+# Result type <class 'dict'>
+# Total 577563
+# Function read_rides_as_tuples('Data/ctabus.csv',) {'result_type': <class 'dict'>} Took 2.2997 seconds
+# Memory Use: Current 188375382, Peak 188405775
+# Result type <class '__main__.RowTuple'>
+# Total 577563
+# Function read_rides_as_tuples('Data/ctabus.csv',) {'result_type': <class '__main__.RowTuple'>} Took 2.2853 seconds
+# Memory Use: Current 128309102, Peak 128339375
+# Result type <class '__main__.RowSimple'>
+# Total 577563
+# Function read_rides_as_tuples('Data/ctabus.csv',) {'result_type': <class '__main__.RowSimple'>} Took 2.7319 seconds
+# Memory Use: Current 142173422, Peak 142203687
+# Result type <class '__main__.RowWithSlots'>
+# Total 577563
+# Function read_rides_as_tuples('Data/ctabus.csv',) {'result_type': <class '__main__.RowWithSlots'>} Took 2.5442 seconds
+# Memory Use: Current 119068206, Peak 119098463
+# Result type <class '__main__.RowDataclassWithotSlots'>
+# Total 577563
+# Function read_rides_as_tuples('Data/ctabus.csv',) {'result_type': <class '__main__.RowDataclassWithotSlots'>} Took 2.5923 seconds
+# Memory Use: Current 142173486, Peak 142203735
+# Result type <class '__main__.RowDataclassWithSlots'>
+# Total 577563
+# Function read_rides_as_tuples('Data/ctabus.csv',) {'result_type': <class '__main__.RowDataclassWithSlots'>} Took 2.5742 seconds
+# Memory Use: Current 119068150, Peak 119098391
+# Result type <class '__main__.RowPydantic'>
+# Total 577563
+# Function read_rides_as_tuples('Data/ctabus.csv',) {'result_type': <class '__main__.RowPydantic'>} Took 4.4060 seconds
+# Memory Use: Current 359334662, Peak 359364951
+# Result type <class '__main__.RowStruct'>
+# Total 577563
+# Function read_rides_as_tuples('Data/ctabus.csv',) {'result_type': <class '__main__.RowStruct'>} Took 1.8238 seconds
+# Memory Use: Current 119067814, Peak 119098143
