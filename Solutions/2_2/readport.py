@@ -2,6 +2,7 @@
 
 import csv
 
+
 # A function that reads a file into a list of dicts
 def read_portfolio(filename):
     portfolio = []

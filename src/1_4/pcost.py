@@ -1,5 +1,5 @@
-from pathlib import Path
 import logging
+from pathlib import Path
 
 DATA_PATH = Path("Data/portfolio3.dat")
 

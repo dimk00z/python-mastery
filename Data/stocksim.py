@@ -10,8 +10,9 @@
 # in different ways in order to write interesting Python examples
 
 import math
-import time
 import threading
+import time
+
 try:
     import queue
 except ImportError:

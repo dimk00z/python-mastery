@@ -1,7 +1,8 @@
 # structure.py
 
-import sys
 import inspect
+import sys
+
 
 class Structure:
     _fields = ()

@@ -2,6 +2,7 @@
 
 import csv
 
+
 def read_rides_as_tuples(filename):
     '''
     Read the bus ride data as a list of tuples

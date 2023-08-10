@@ -2,6 +2,7 @@
 
 from ..formatter import TableFormatter
 
+
 class TSVTableFormatter(TableFormatter):
     def headings(self, headers):
         print('\t'.join(headers))

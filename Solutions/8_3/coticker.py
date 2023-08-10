@@ -1,6 +1,7 @@
 # coticker.py
 from structure import Structure
 
+
 class Ticker(Structure):
     name = String()
     price = Float()
@@ -12,9 +13,11 @@ class Ticker(Structure):
     low = Float()
     volume = Integer()
 
+import csv
+
 from cofollow import consumer, follow
 from tableformat import create_formatter
-import csv
+
 
 @consumer
 def to_csv(target):

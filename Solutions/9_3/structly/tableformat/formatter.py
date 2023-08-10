@@ -1,6 +1,7 @@
 # tableformat.py
 from abc import ABC, abstractmethod
 
+
 def print_table(records, fields, formatter):
     if not isinstance(formatter, TableFormatter):
         raise RuntimeError('Expected a TableFormatter')
@@ -19,9 +20,10 @@ class TableFormatter(ABC):
     def row(self, rowdata):
         pass
 
-from .formats.text import TextTableFormatter
 from .formats.csv import CSVTableFormatter
 from .formats.html import HTMLTableFormatter
+from .formats.text import TextTableFormatter
+
 
 class ColumnFormatMixin:
     formats = []

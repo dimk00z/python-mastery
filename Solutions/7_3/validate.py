@@ -54,8 +54,9 @@ class PositiveFloat(Float, Positive):
 class NonEmptyString(String, NonEmpty):
     pass
 
-from inspect import signature
 from functools import wraps
+from inspect import signature
+
 
 def isvalidator(item):
     return isinstance(item, type) and issubclass(item, Validator)

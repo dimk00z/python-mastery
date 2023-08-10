@@ -33,8 +33,9 @@ def read_portfolio(filename):
     return portfolio
 
 if __name__ == '__main__':
-    import tableformat
     import reader
+    import tableformat
+
     # portfolio = read_portfolio('../../Data/portfolio.csv')
     portfolio = reader.read_csv_as_instances('../../Data/portfolio.csv', Stock)
     tableformat.print_table(portfolio, ['name', 'shares', 'price'])

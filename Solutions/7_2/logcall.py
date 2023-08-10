@@ -2,6 +2,7 @@
 
 from functools import wraps
 
+
 def logformat(fmt):
     def logged(func):
         print('Adding logging to', func.__name__)

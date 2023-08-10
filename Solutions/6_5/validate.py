@@ -54,6 +54,7 @@ class NonEmptyString(String, NonEmpty):
 
 from inspect import signature
 
+
 class ValidatedFunction:
     def __init__(self, func):
         self.func = func

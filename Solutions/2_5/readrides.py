@@ -2,6 +2,7 @@
 
 import csv
 
+
 def read_rides_as_tuples(filename):
     '''
     Read the bus ride data as a list of tuples
@@ -88,6 +89,8 @@ def read_rides_as_columns(filename):
 # The great "fake"
 
 import collections
+
+
 class RideData(collections.abc.Sequence):
     def __init__(self):
         # Each value is a list with all of the values (a column)

@@ -3,6 +3,7 @@
 import collections
 import csv
 
+
 class DataCollection(collections.abc.Sequence):
     def __init__(self, columns):
         self.column_names = list(columns)

@@ -2,6 +2,7 @@
 
 from validate import Validator, validated
 
+
 class Structure:
     _fields = ()
     _types = ()

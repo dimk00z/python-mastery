@@ -2,6 +2,7 @@
 
 from logcall import logged
 
+
 @logged
 def add(x,y):
     return x+y

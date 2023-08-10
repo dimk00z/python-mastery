@@ -2,6 +2,7 @@
 
 from structure import Structure
 
+
 class Stock(Structure):
     name = String()
     shares = PositiveInteger()

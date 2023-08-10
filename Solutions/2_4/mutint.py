@@ -4,6 +4,7 @@
 
 from functools import total_ordering
 
+
 @total_ordering
 class MutInt:
     __slots__ = ['value']

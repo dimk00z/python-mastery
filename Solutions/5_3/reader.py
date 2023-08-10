@@ -2,6 +2,7 @@
 
 import csv
 
+
 def convert_csv(lines, converter, *, headers=None):
     rows = csv.reader(lines)
     if headers is None:

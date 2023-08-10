@@ -1,9 +1,9 @@
 # cta.py
 
-from collections import defaultdict, Counter
-import tracemalloc
 import csv
 import sys
+import tracemalloc
+from collections import Counter, defaultdict
 
 tracemalloc.start()
 

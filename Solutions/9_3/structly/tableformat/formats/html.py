@@ -2,6 +2,7 @@
 
 from ..formatter import TableFormatter
 
+
 class HTMLTableFormatter(TableFormatter):
     def headings(self, headers):
         print('<tr>', end=' ')

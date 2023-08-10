@@ -1,6 +1,7 @@
 # ticker.py
 from structure import Structure
 
+
 class Ticker(Structure):
     name = String()
     price = Float()
@@ -13,8 +14,9 @@ class Ticker(Structure):
     volume = Integer()
 
 if __name__ == '__main__':
-    from follow import follow
     import csv
+
+    from follow import follow
     from tableformat import create_formatter, print_table
 
     formatter = create_formatter('text')

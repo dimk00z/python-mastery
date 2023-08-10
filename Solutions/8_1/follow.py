@@ -2,6 +2,7 @@
 import os
 import time
 
+
 def follow(filename):
     '''
     Generator that produces a sequence of lines being written at the end of a file.

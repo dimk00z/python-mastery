@@ -1,7 +1,8 @@
 # cofollow.py
+import csv
 import os
 import time
-import csv
+
 
 def follow(filename,target):
     with open(filename,"r") as f:
@@ -20,6 +21,7 @@ def receive(expected_type):
 
 # Decorator for coroutines
 from functools import wraps
+
 
 def consumer(func):
     @wraps(func)

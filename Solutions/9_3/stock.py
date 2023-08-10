@@ -2,6 +2,7 @@
 
 from structly import *
 
+
 class Stock(Structure):
     name = String()
     shares = PositiveInteger()

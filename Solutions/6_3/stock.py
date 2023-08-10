@@ -2,6 +2,7 @@
 
 from structure import Structure
 
+
 class Stock(Structure):
     def __init__(self, name, shares, price):
         self._init()

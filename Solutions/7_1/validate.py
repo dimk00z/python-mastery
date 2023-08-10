@@ -57,6 +57,7 @@ class NonEmptyString(String, NonEmpty):
 
 from inspect import signature
 
+
 def isvalidator(item):
     return isinstance(item, type) and issubclass(item, Validator)
 

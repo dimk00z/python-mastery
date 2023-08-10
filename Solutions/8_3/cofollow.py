@@ -2,6 +2,7 @@
 import os
 import time
 
+
 def follow(filename, target):
     with open(filename, 'r') as f:
         f.seek(0,os.SEEK_END)
@@ -14,6 +15,7 @@ def follow(filename, target):
 
 # Decorator for coroutines
 from functools import wraps
+
 
 def consumer(func):
     @wraps(func)

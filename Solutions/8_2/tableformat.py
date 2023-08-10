@@ -1,6 +1,7 @@
 # tableformat.py
 from abc import ABC, abstractmethod
 
+
 def print_table(records, fields, formatter):
     if not isinstance(formatter, TableFormatter):
         raise RuntimeError('Expected a TableFormatter')

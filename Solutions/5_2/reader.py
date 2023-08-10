@@ -1,8 +1,9 @@
 # reader.py
 
-from abc import ABC, abstractmethod
 import csv
 import logging
+from abc import ABC, abstractmethod
+
 log = logging.getLogger(__name__)
 
 class CSVParser(ABC):
