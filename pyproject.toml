@@ -9,6 +9,9 @@ packages = [{include = "python_mastery"}]
 [tool.poetry.dependencies]
 python = "^3.11"
 ipython = "^8.14.0"
+pydantic = "^2.1.1"
+msgspec = "^0.17.0"
+isort = "^5.12.0"
 
 
 [build-system]
