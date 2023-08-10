@@ -4,6 +4,7 @@ from dataclasses import dataclass
 from functools import wraps
 from pathlib import Path
 from typing import Any, NamedTuple, Type
+
 from msgspec import Struct
 from pydantic import BaseModel
 
