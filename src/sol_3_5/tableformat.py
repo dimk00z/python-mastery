@@ -1,8 +1,9 @@
 from typing import Type
 from src.sol_3_4 import stock
+from abc import ABC
 
 
-class TableFormatter:
+class TableFormatter(ABC):
     def headings(self, headers):
         raise NotImplementedError()
 
