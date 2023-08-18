@@ -1,7 +1,8 @@
 import sys
-from typing import Type
-from src.sol_3_4 import stock
 from abc import ABC, abstractmethod
+from typing import Type
+
+from src.sol_3_4 import stock
 
 
 class RedirectStdout:
@@ -25,6 +26,19 @@ class ITableFormatter(ABC):
     @abstractmethod
     def row(self, rowdata):
         raise NotImplementedError()
+
+
+class UpperHeadersMixin:
+    def headings(self, headers):
+        super().headings([h.upper() for h in headers])
+
+
+class ColumnFormatMixin:
+    formats = []
+
+    def row(self, rowdata):
+        rowdata = [(fmt % item) for fmt, item in zip(self.formats, rowdata)]
+        super().row(rowdata)
 
 
 class TextTableFormatter(ITableFormatter):
@@ -72,15 +86,30 @@ class NewFormatter(ITableFormatter):
         pass
 
 
-def create_formatter(formatter_type: str) -> ITableFormatter:
+def create_formatter(
+    formatter_name: str,
+    column_formats=None,
+    upper_headers: bool = False,
+) -> ITableFormatter:
     formatters: dict[str, Type[ITableFormatter]] = {
         "text": TextTableFormatter,
         "html": HTMLTableFormatter,
         "csv": CSVTableFormatter,
     }
-    if formatter_type not in formatters:
-        raise RuntimeError(f"Unknown format {formatter_type}")
-    return formatters[formatter_type]()
+    if formatter_name not in formatters:
+        raise RuntimeError(f"Unknown format {formatter_name}")
+    formatter_cls = formatters[formatter_name]
+    if column_formats:
+
+        class formatter_cls(ColumnFormatMixin, formatter_cls):
+            formats = column_formats
+
+    if upper_headers:
+
+        class formatter_cls(UpperHeadersMixin, formatter_cls):
+            pass
+
+    return formatter_cls()
 
 
 class HTMLTableFormatter(ITableFormatter):
@@ -114,7 +143,11 @@ if __name__ == "__main__":
     print_table(
         portfolios=portfolios,
         fields=["name", "shares", "price"],
-        formatter=create_formatter("text"),
+        formatter=create_formatter(
+            "text",
+            upper_headers=True,
+            column_formats=["%s", "%d", "%0.2f"],
+        ),
     )
     print_table(
         portfolios=portfolios,
@@ -129,10 +162,10 @@ if __name__ == "__main__":
         fields=["name", "shares", "price"],
         formatter=create_formatter("html"),
     )
-    with RedirectStdout(open("out.txt", "w")) as file:
-        print_table(
-            portfolios=portfolios,
-            fields=["name", "shares", "price"],
-            formatter=create_formatter("text"),
-        )
-        file.close()
+    # with RedirectStdout(open("out.txt", "w")) as file:
+    #     print_table(
+    #         portfolios=portfolios,
+    #         fields=["name", "shares", "price"],
+    #         formatter=create_formatter("text"),
+    #     )
+    #     file.close()
