@@ -4,9 +4,9 @@ from validate import PositiveFloat, PositiveInteger, String
 
 
 class Stock:
-    name = String("name")
-    shares = PositiveInteger("shares")
-    price = PositiveFloat("price")
+    name = String()
+    shares = PositiveInteger()
+    price = PositiveFloat()
 
     def __init__(self, name, shares, price):
         self.name = name
@@ -15,22 +15,6 @@ class Stock:
 
     def __repr__(self):
         return f"Stock({self.name!r}, {self.shares!r}, {self.price!r})"
-
-    @property
-    def shares(self):
-        return self._shares
-
-    @shares.setter
-    def shares(self, value):
-        self._shares = PositiveInteger.check(value)
-
-    @property
-    def price(self):
-        return self._price
-
-    @price.setter
-    def price(self, value):
-        self._price = PositiveFloat.check(value)
 
     @property
     def cost(self):
@@ -58,6 +42,17 @@ def read_portfolio(filename):
 
 class DStock(Stock):
     _types = (str, int, Decimal)
+
+
+class Readonly:
+    def __init__(self, obj):
+        self.__dict__["_obj"] = obj
+
+    def __setattr__(self, name, value):
+        raise AttributeError("Can't set attribute")
+
+    def __getattr__(self, name):
+        return getattr(self._obj, name)
 
 
 def main():
